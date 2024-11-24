@@ -1,0 +1,51 @@
+type: submission
+comment: Do not share or recommend proprietary apps here. It is an infraction of this subreddit's rules. Make sure you read the rules of this subreddit on the sidebar. If you are not sure of the nature of an app, do not share or recommend it. To find out what constitutes FOSS or freedomware, [read this article](https://www.gnu.org/philosophy/free-sw.en.html). To find out why proprietary software is bad, [read this article](https://www.gnu.org/philosophy/free-software-even-more-important.html). Proprietary software is dangerous because [it is often malware](https://www.gnu.org/proprietary/proprietary.html). Have a splendid day!
+comment_stickied: true
+comment_locked: true
+---
+type: submission
+flair_text (includes-word): "Application Support"
+comment_stickied: true
+comment_locked: true
+comment: Your post is flaired as **Application Support**. Please make sure your post includes your phone type, whether you use a custom ROM (and which one if so), Android version, root status (and method, if applicable), app version, app name, and a description of the issue.
+---
+type: submission
+flair_text (includes-word): "Application Suggestion"
+message_subject: Please check your post flair
+message: Please make sure that you used the correct flair. The Application Suggestion flair is meant for people suggesting applications to others. If you are looking for an app, please change your flair to Application Request.
+---
+type: comment
+body: ["Zettel", "DropSync", "AnyType", "Dropbox", "OneDrive", "TikToks", "TikTok", "Poweramp", "AIMP", "Oto", "Weawow", "SmartTube", "Moon", "Readera", "SwiftKey", "Acrobat", "Photoshop", "Niagara", "Gcam", "Evie", "Namida", "Gboard", "Truecaller", "Mercurygram", "Macrodroid", "Controld", "Stremio", "Uber", "Adobe", "Zarchiver", "QuickPic", "Xplore", "Instander", "Snapseed", "Discord", "Blokada", "Micay", "Edge", "Chrome", "Island", "Tasker", "Mega", "Notion", "FolderSync", "Facebook", "FB", "Instagram", "Insta", "Snapchat", "Snap", "Mixplorer", "Musicolet", "Whatsapp", "Lucky Patcher", "not FOSS", "Spotify", "Google Files", "MX Music", "Twitter", "Kiwi"]
+action_reason: Non-FOSS? [{{match}}]
+moderators_exempt: true
+comment: This submission may contain a recommendation for a non-FOSS app/service ({{match}}).  If this is an error, please ignore this message. If this submission recommends such services, please report it to the mods. 
+message: We believe your submission may promote non-FOSS apps or services ({{match}}). Please edit or delete your comment to not violate our rules. If this was a mistake, you may ignore this message. Please reply if you have any questions! 
+---
+type: comment
+body: ["vanced", "revanced", "armcord", "legcord", "bunny", "vesktop", "equibop", "vendetta", "revenge", "aliucord", "xmanager", "goofcord"]
+comment: One or more apps included in your post ({{match}}) is an open source modification to a proprietary app. While we allow these mods to be suggested, it is recommended to use FOSS alternatives rather than relying on proprietary services. If you believe this to have been sent in error, please report this message under any rule.
+---
+type: any
+body (includes): ["t.me", "telegram", "telegram.com", "apkpure", "aptoide"]
+priority: 1
+action: spam
+action_reason: Suspicious Links
+message: Unfortunately, your submission has been removed because it may contain suspicious links or otherwise may violate **Rule 10**. Telegram, APK site, and other suspicious links are not allowed on this subreddit. If you believe this was a mistake, please reply to this message. 
+moderators_exempt: true
+---
+type: any
+reports: REDACTED
+action: filter 
+modmail: The above submission has been automatically filtered because it reached 3 or more reports. Please review the submission.
+message: Your submission has been filtered for moderator approval due to a report threshold being reached. Please reply here if you have any questions or if we don't make a decision in a timely manner. 
+---
+type: any
+reports: RERDACTED
+modmail: This submission has been reported. Please review this content for rule-breaking.
+---
+type: comment
+reports:REDACTED
+author:
+    name: ["AutoModerator"]
+action: remove
+modmail: This automod comment was removed for reaching 3 reports. 
