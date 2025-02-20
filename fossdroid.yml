@@ -10,6 +10,11 @@ comment_locked: true
 comment: Your post is flaired as **Application Support**. Please make sure your post includes your phone type, whether you use a custom ROM (and which one if so), Android version, root status (and method, if applicable), app version, app name, and a description of the issue.
 ---
 type: submission
+title+body (includes): ["VPN"]
+action: spam 
+comment: Your submission has been removed as it may be suggesting a VPN. All VPN requests and suggestions are banned due to a high volume of spam bots. If you are looking for a VPN, please check out Mullvad and ProtonVPN.
+---
+type: submission 
 flair_text (includes-word): "Application Suggestion"
 message_subject: Please check your post flair
 message: Please make sure that you used the correct flair. The Application Suggestion flair is meant for people suggesting applications to others. If you are looking for an app, please change your flair to Application Request.
@@ -22,30 +27,65 @@ comment: This submission may contain a recommendation for a non-FOSS app/service
 message: We believe your submission may promote non-FOSS apps or services ({{match}}). Please edit or delete your comment to not violate our rules. If this was a mistake, you may ignore this message. Please reply if you have any questions! 
 ---
 type: comment
-body: ["vanced", "revanced", "armcord", "legcord", "bunny", "vesktop", "equibop", "vendetta", "revenge", "aliucord", "xmanager", "goofcord"]
+body: ["vanced", "revanced", xmanager", "rvx"]
+action: report
+comment: YouTube Vanced, Revanced, xManager, and other patching applications aren't allowed. Using these tools for FOSS apps is fine, but for the purposes of our sub, Youtube and Reddit ReVanced are not considered FOSS. If this message was received in error, please ignore it. For non-FOSS uses of open-source patchers, please check out R/piracy, r/revancedapp, and any other relevant sub. 
+---
+type: comment
+body: ["armcord", "legcord", "bunny", "vesktop", "equibop", "vendetta", "revenge", "aliucord", "goofcord"]
 comment: One or more apps included in your post ({{match}}) is an open source modification to a proprietary app. While we allow these mods to be suggested, it is recommended to use FOSS alternatives rather than relying on proprietary services. If you believe this to have been sent in error, please report this message under any rule.
 ---
 type: any
-body (includes): ["t.me", "telegram", "telegram.com", "apkpure", "aptoide"]
-priority: 1
+body (regex): (?i)(t\s*\.?\s*me|telegram\s*.{0,5}\s*com)
 action: spam
 action_reason: Suspicious Links
 message: Unfortunately, your submission has been removed because it may contain suspicious links or otherwise may violate **Rule 10**. Telegram, APK site, and other suspicious links are not allowed on this subreddit. If you believe this was a mistake, please reply to this message. 
 moderators_exempt: true
 ---
 type: any
-reports: REDACTED
+reports: 3
 action: filter 
 modmail: The above submission has been automatically filtered because it reached 3 or more reports. Please review the submission.
 message: Your submission has been filtered for moderator approval due to a report threshold being reached. Please reply here if you have any questions or if we don't make a decision in a timely manner. 
 ---
 type: any
-reports: RERDACTED
+reports: 2
 modmail: This submission has been reported. Please review this content for rule-breaking.
 ---
 type: comment
-reports:REDACTED
+reports: 3
 author:
     name: ["AutoModerator"]
 action: remove
 modmail: This automod comment was removed for reaching 3 reports. 
+---
+type: any
+body (includes): ["x.com", "instagram.com", "twitter.com", "facebook.com", "tiktok.com", "truthsocial.com"]
+action: remove
+message_subject: Your submission to r/fossdroid has been removed
+message: This comment or post was removed because it links to a social media platform we do not allow here. Please try again without linking to Twitter/X, Instagram, Facebook, Truth Social, or TikTok. We may expand on this list in the future. Instead, we recommend either using alternative viewers online, or preferably, using alternative platforms such as Bluesky, Mastodon, or Lemmy. Attempting to bypass this filter may result in a temporary or permanent ban depending on if you do so repeatedly. Thank you for your cooperation. 
+---
+type: any
+body (regex): /\b(?:x{1,2}[a-zA-Z0-9\s]{0,5}[._-]?c[o0]?m?|twitter[a-zA-Z0-9\s]{0,5}[._-]?c[o0]?m?|instagram[a-zA-Z0-9\s]{0,5}[._-]?c[o0]?m?|facebook[a-zA-Z0-9\s]{0,5}[._-]?c[o0]?m?|truthsocial[a-zA-Z0-9\s]{0,5}[._-]?c[o0]?m?)\b/i
+action: filter
+action_reason: Prohibited Sites ([match])
+message_subject: Your submission to r/fossdroid has been removed
+message: We believe your message may contain an attempt at filter evasion. Your post or comment was sent for mod review. Please remove offending content or try again without the filter evasion. If you attempt to bypass filters multiple times, you may recieve temporary or permanent bans.
+modmail: Prohibited site ([match]) detected. Please review, and archive this message afterwards. 
+---
+type: any
+body (regex): ^(?=.*play\.google\.com)(?!.*(github\.com|f-droid\.org))
+action: report
+action_reason: Only links Google Play
+moderators_exempt: false
+message_subject: Your recent r/fossdroid submission
+message: |
+   Your submission has been reported to moderators because it contains a link to Google Play but not to either GitHub or F-Droid. We require that all Google Play links are accompanied by links to a non-Google distribution method. If you believe this message was received in error, please ignore it or reply here. Otherwise, please edit your submission to comply with our rules!
+---
+type: submission
+flair_text: "Application Suggestion"
+~body (regex): "(?i)\\b(MIT|Apache(?: License)?(?: 2\\.0)?|BSD(?: License| 2-Clause| 3-Clause)?|Unlicense|ISC(?: License)?|GNU(?: General Public License)?|GPL(?:-?v?(?:2|3)\\.?\\d?)?|LGPL(?:-?v?(?:2\\.1|3)\\.?\\d?)?|AGPL(?:-?v?(?:3)\\.?\\d?)?|MPL(?:-?2\\.0)?|Mozilla Public License|EPL(?:-?2\\.0)?|Eclipse Public License|CC0|Creative Commons(?: Zero| Attribution(?:-ShareAlike)?)?)\\b" 
+action: filter
+action_reason: Doesn't contain known FOSS licenses
+message_subject: Application Suggestion on r/fossdroid
+message: Your application suggestion post has been removed because it doesn't appear to list an open-source license. Please edit your post to have one, and then respond here for a mod to check it! If you already listed source code licenses, please reply here and we will check!
