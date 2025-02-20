@@ -1,2 +1,3 @@
 # Reddit-Automod
-Some of my automod scripts
+
+This repository contains the r/fossdroid automod script. 
